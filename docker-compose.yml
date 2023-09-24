@@ -1,0 +1,11 @@
+version: '3.1'
+
+services:
+  app:
+    image: sidorov1976/devops-for-programmers-project-74
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    volumes:
+      - ./app:/app
+    command: npm test
