@@ -8,7 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: sudo apt install make
-      - run: sudo npm cache clean --force
-      - run: sudo chown -R 1001:0 /.npm
+      - run: sudo apt remove npm
+      - run: sudo apr update
+      - run: sudo apt install npm
+#      - run: sudo chown -R 1001:0 /.npm
       - run: docker run --user $(id -u) -w /root -v `pwd`/app:/root node:14.18.1 npm ci
       - run: make ci
