@@ -8,5 +8,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: sudo apt install make
-      - run: docker run --user $(id -u) -it -w /root -v `pwd`/app:/root node:14.18.1 npm ci
+      - run: docker run --user $(id -u) -w /root -v `pwd`/app:/root node:14.18.1 npm ci
       - run: make ci
